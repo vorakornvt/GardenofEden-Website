@@ -1,19 +1,19 @@
 import { style } from '@vanilla-extract/css';
 import HeroImg from '../assets/images2/Hero.png';
 import { vars } from '../styles/themes.css'; 
-/* HeroPic style */
+
 export const HeroPic = style({
   backgroundImage: `url(${HeroImg})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  height: '560px',
-  width: '95%',
+  height: '590px',
+  width: '96%',
   margin: 'auto',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  position: 'relative', /* Important to position the overlay */
+  position: 'relative', 
 });
 
 
@@ -53,39 +53,6 @@ margin: 'auto',
 
 })
 
-export const heroContent = style({
-  fontSize: '56px',
-  color: vars.colors.brand,
-  textTransform: 'uppercase',
-  textAlign: 'center',
-  fontFamily: vars.fonts.display,
-  fontWeight: 'bold',
-
-});
-
-export const heroContentTwo = style({
-  fontSize: '18px',
-  color: vars.colors.complementary,
-  textTransform: 'uppercase',
-  textAlign: 'center',
-  fontFamily: vars.fonts.brand,
-  fontWeight: 'lighter'
-
-});
-
-export const heroTextBox = style({
-  
-  textAlign: 'right',         
-  alignItems: 'end',          
-  display: 'flex',              
-  flexDirection: 'column',      
-  color: vars.colors.complementary,           
-  padding: '16px',              
-  marginRight: '600px',
-  borderRadius: '4px',          
-  gap: 1,                  
-  
-});
 
 
 export const logo = style({

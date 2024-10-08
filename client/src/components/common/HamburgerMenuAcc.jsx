@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import { IoPersonOutline } from "react-icons/io5";
 import * as stylesTwo from "./Btn.css";
 import { Link } from "react-router-dom";
-import DecorButtom from "../../assets/images2/Asset3real.png";
+// import DecorButtom from "../../assets/images2/Asset4real.png";
 
 function HamburgerMenuAcc() {
   const [show, setShow] = useState(false);
@@ -45,7 +45,7 @@ function HamburgerMenuAcc() {
             </Button>
           </Row>
           <Row>
-            <img className="mx-auto w-25 mt-5" src={DecorButtom} alt="LOGO" />
+            {/* <img className="mx-auto w-25 mt-5" src={DecorButtom} alt="LOGO" /> */}
           </Row>
         </Offcanvas.Body>
       </Offcanvas>

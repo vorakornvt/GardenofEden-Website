@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import * as style from "./Home.css";
 import { Link } from "react-router-dom";
 import DecorButtomWhite from "../../src/assets/images2/A2.png";
+import ProductList from "../../src/components/common/ProductList";
 
 const Home = () => {
   return (
@@ -17,9 +18,9 @@ const Home = () => {
               <Link className="text-white">Discover</Link>{" "}
             </p>
           </div>
-          <img className={style.LgoOverlay} src={DecorButtomWhite} alt="LOGO" />
         </div>
       </div>
+      <ProductList />
     </Container>
   );
 };

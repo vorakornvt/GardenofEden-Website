@@ -1,6 +1,6 @@
 import useAuth from "../../hooks/useAuth";
 import { Navbar, Nav, Row, Col } from "react-bootstrap";
-import NavLogo from "/src/assets/images2/Asset9real.png";
+import NavLogo from "/src/assets/images2/Asset4real.png";
 import * as styles from "./Header.css";
 import HamburgerMenu from "../../components/common/HamburgerMenu";
 import { IoMdHeartEmpty } from "react-icons/io";
