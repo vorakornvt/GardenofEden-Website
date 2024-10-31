@@ -12,6 +12,7 @@ import ProductImg3 from "../../assets/images2/PDP3.jpeg";
 import ProductImg4 from "../../assets/images2/PDP6.jpeg";
 // import DecorButtom from "../../assets/images2/Asset3real.png";
 import { Link } from "react-router-dom";
+import { CardText } from "react-bootstrap";
 
 function HamburgerMenu() {
   const [show, setShow] = useState(false);
@@ -31,39 +32,35 @@ function HamburgerMenu() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Col>
-            <Link to="/product">
-              <Card className="bg-light mb-1 w-75 mx-auto text-black">
+            <Link className="link-underline-light" to="/product">
+              <Card className="bg-light mb-1 w-75 mx-auto text-black border border-white">
                 <Card.Img src={ProductImg1} alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Text className="text-center">Cushions</Card.Text>
-                </Card.ImgOverlay>
+
+                <Card.Text className={styles.ProductText}>Cushions</Card.Text>
               </Card>
             </Link>
-            <Link to="/product">
-              <Card className="bg-light mb-1 w-75  mx-auto   text-black">
+            <Link className="link-underline-light" to="/product">
+              <Card className="bg-light mb-1 w-75 mx-auto text-black border border-white">
                 <Card.Img src={ProductImg2} alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Text className="text-center">Notebooks</Card.Text>
-                </Card.ImgOverlay>
+
+                <Card.Text className={styles.ProductText}>Notebooks</Card.Text>
               </Card>
             </Link>
-            <Link to="/product">
-              <Card className="bg-light mb-1 w-75 mx-auto  text-black">
+            <Link className="link-underline-light" to="/product">
+              <Card className="bg-light mb-1 w-75 mx-auto text-black border border-white">
                 <Card.Img src={ProductImg3} alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Text className="text-center">Tableware</Card.Text>
-                </Card.ImgOverlay>
+
+                <Card.Text className={styles.ProductText}>Tableware</Card.Text>
               </Card>
             </Link>
 
-            <Link to="/product">
-              <Card className="bg-light mb-1 w-75 mx-auto  text-black">
+            <Link className="link-underline-light" to="/product">
+              <Card className="bg-light mb-1 w-75 mx-auto text-black border border-white">
                 <Card.Img src={ProductImg4} alt="Card image" />
-                <Card.ImgOverlay>
-                  <Card.Text className="text-center">
-                    Candles & Candleholders
-                  </Card.Text>
-                </Card.ImgOverlay>
+
+                <Card.Text className={styles.ProductText}>
+                  Candles & Candleholders
+                </Card.Text>
               </Card>
             </Link>
           </Col>

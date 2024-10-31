@@ -24,6 +24,14 @@ export const HamBarText = style({
  display: 'flex',
  flexDirection: 'column',
   font: vars.fontSizes['2x'],
+  textDecoration: 'none'
+  
+})
+
+export const ProductText = style({
+  textDecoration: 'none',
+  font: vars.fonts.body,
+  textAlign: 'center',
   
 })
 
