@@ -26,7 +26,7 @@ function HamburgerMenu() {
         <RxHamburgerMenu />
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      {/* <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header className={styles.HamBarText}>
           OUR PRODUCT
         </Offcanvas.Header>
@@ -66,9 +66,9 @@ function HamburgerMenu() {
           </Col>
           <Row>
             {/* <img className="mx-auto w-25" src={DecorButtom} alt="LOGO" /> */}
-          </Row>
+      {/* </Row>
         </Offcanvas.Body>
-      </Offcanvas>
+      // </Offcanvas> */}
     </>
   );
 }

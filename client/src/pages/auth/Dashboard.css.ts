@@ -11,14 +11,14 @@ export const cardContainer = style({
 
 export const welcomeMessage = style({
   fontSize: vars.fontSizes['6x'],
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   textTransform: 'uppercase',
   marginBottom: vars.space['2x'],
 });
 
 export const textContent = style({
   fontSize: vars.fontSizes['3x'],
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   marginBottom: vars.space['2x'],
 });
 

@@ -13,7 +13,7 @@ export const heading = style({
   textTransform: 'uppercase',
   marginBottom: vars.space['1x'],
   textAlign: 'center',
-  fontFamily: vars.fonts.display,
+  fontFamily: vars.fonts.body,
   fontWeight: 'bold'
 });
 
@@ -30,20 +30,19 @@ export const subHeading = style({
 
 export const submitButton =  style({
   backgroundColor: vars.colors.primary,
-  color: vars.colors.complementary,
-  border: `0.1px solid ${vars.colors.brand}`, 
-  outline: `0.1px solid ${vars.colors.primary}`,  
+  color: vars.colors.band,
+  border: `1px solid ${vars.colors.band}`, 
   padding: `${vars.space['2x']} ${vars.space['3x']}`,
   marginTop: vars.space['3x'],
   fontSize: vars.fontSizes['3x'],
-  fontFamily: vars.fonts.display,
+  fontFamily: vars.fonts.body,
   textTransform: 'uppercase',
-  borderRadius: '2px',
+  borderRadius: '5px',
   cursor: 'pointer',
   transition: 'background-color 0.3s ease, color 0.3s ease, transform 0.3s ease',
 
   ':hover': {
-    backgroundColor: vars.colors.complementary,
+    backgroundColor: vars.colors.band,
     color: vars.colors.primary,
   },
 
@@ -54,12 +53,17 @@ export const submitButton =  style({
 });
 
 export const FormBox = style({
-  width: '30%',
+  width: '40%',
   alignItems: 'center',
   textAlign: 'center',
-  marginTop: '100px',
+  paddingLeft: '40px',
+  paddingRight: '40px',
+  marginTop: '70px',
   backgroundColor: vars.colors.primary,
-})
+
+});
+
+
 
 export const styledInput = style({
   margin: "1rem 0",
@@ -70,7 +74,7 @@ export const styledInput = style({
   border: "1px solid",
   color: vars.colors.primary,
   background: vars.colors.complementary,
-  fontFamily: vars.fonts.display,
+  fontFamily: vars.fonts.body,
   transition: "all 0.2s",
 
   ":focus": {
@@ -84,8 +88,9 @@ export const userNav = style({
   marginTop: "1rem",
   paddingTop: "1rem",
   fontSize: "0.9em",
-
+  fontFamily: vars.fonts.body,
   color: vars.colors.complementary,
+  marginBottom: vars.space["2x"]
 })
 
 globalStyle(`${userNav} a`, {
@@ -97,4 +102,5 @@ globalStyle(`${userNav} a`, {
 globalStyle(`${userNav} a:hover`, {
   color: vars.colors.brand,
   textDecoration: "underline"
+
 });

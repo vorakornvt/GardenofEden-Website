@@ -41,6 +41,7 @@ export const navLink = style({
   textTransform: "uppercase",
   marginLeft: vars.space['4x'],
   textDecoration: 'none',
+  fontFamily: vars.fonts.body,
 
   ":hover": {
     color: vars.colors.textPrimary, 
