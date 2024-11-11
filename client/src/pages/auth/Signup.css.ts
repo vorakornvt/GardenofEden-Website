@@ -53,7 +53,7 @@ export const submitButton =  style({
 });
 
 export const FormBox = style({
-  width: '40%',
+  width: '50%',
   alignItems: 'center',
   textAlign: 'center',
   paddingLeft: '40px',
@@ -72,7 +72,7 @@ export const styledInput = style({
   fontSize: vars.fontSizes["3x"],
   outline: "none",
   border: "1px solid",
-  color: vars.colors.primary,
+  color: vars.colors.band,
   background: vars.colors.complementary,
   fontFamily: vars.fonts.body,
   transition: "all 0.2s",

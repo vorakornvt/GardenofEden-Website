@@ -1,81 +1,76 @@
 import { style } from '@vanilla-extract/css';
 import { vars } from '../../styles/themes.css';
 
-
+// Style for the Hamburger Button
 export const HamBar = style({
   border: 'none',
   color: vars.colors.band,
-  fontSize: vars.fontSizes['4x'],
-  textTransform: "uppercase",
-
-  marginLeft: '30px',
   textDecoration: 'none',
-  marginTop: '-5px',
-
   ":hover": {
     border: 'none',
     backgroundColor: vars.colors.primary,
     color: vars.colors.textPrimary
   }
-})
+});
 
+// ModalBody with Flex layout and padding
 export const ModalBody = style({
   display: 'flex',
   flexDirection: 'row',
-  backgroundColor: vars.colors.primary,
+  backgroundColor: 'white',
   alignItems: 'center',
   borderRadius: '20px',
   gap: '1rem',
   padding: '2rem',
-  boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)', 
+ 
 });
 
-
+// Style for Hamburger Button Text (like labels or headings)
 export const HamBarText = style({
   fontFamily: vars.fonts.body,
   marginTop: vars.space['4x'],
- display: 'flex',
- flexDirection: 'column',
+  display: 'flex',
+  flexDirection: 'column',
   font: vars.fontSizes['2x'],
   fontSize: vars.fontSizes['3x']
-})
-
-export const accountSection = style({
-  display: "flex",
-  gap: "2rem", // Space between Login and Signup sections
 });
 
-export const loginSection = style({
-  flex: 1, // Equal width for both sections
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
+// OffCanvas width adjustment
+export const OffCanvas = style({
+  width: '200px', // Adjust as needed
 });
 
-export const signupSection = style({
-  flex: 1, // Equal width for both sections
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
+export const Avatar = style({
+  textAlign: 'center',
+  marginBottom: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center', // Centers the avatar and text horizontally
+});
+// Avatar Circle styling for the user's initials
+export const AvatarCircle = style({
+  width: '50px',
+  height: '50px',
+  borderRadius: '50%',
+  backgroundColor: vars.colors.primary, 
+  color: vars.colors.textPrimary,
+  fontSize: '18px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: '10px',
+  fontWeight: 'light',
+  fontFamily: vars.fonts.brand,
+  border: `solid 1px ${vars.colors.textPrimary}`
 });
 
-export const sectionTitle = style({
-  fontSize: "1.5rem",
-  marginBottom: "0.5rem",
-  fontWeight: "bold",
+export const WelcomeText = style({
+  fontSize: '18px',
+  fontWeight: 'bold',
+  marginBottom: '5px',
 });
 
-export const sectionDescription = style({
-  fontSize: "0.875rem",
-  color: "gray",
-  marginBottom: "1rem",
+export const UserEmail = style({
+  fontSize: '14px',
+  color: vars.colors.band, // Assuming textSecondary is defined in your theme
 });
-
-export const centered = style({
-  textAlign: "center",
-  margin: "auto",
-})
-
-export const fontsize4x = style({
-  fontSize: vars.fontSizes['4x'],
-})

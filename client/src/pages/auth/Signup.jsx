@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Container, Form, Spinner } from "react-bootstrap";
+import { Container, Form, Spinner, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 
 // LOCAL MODULES
@@ -20,19 +20,20 @@ function Signup() {
     username: "",
     email: "",
     password: "",
+    firstName: "",
+    lastName: "",
+    salutation: "",
   });
   const [loading, setLoading] = useState(false);
 
   // Destructure data state nested object properties
-  const { username, email, password } = user;
+  const { username, email, password, firstName, lastName, salutation } = user;
 
   // FORM FUNCTIONS
-  // [1] handleTextChange handles state value change for all login data
   const handleTextChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  // [2] handleSubmit will submit form data to API
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -51,9 +52,7 @@ function Signup() {
       navigate("/dashboard");
     } catch (err) {
       console.log(err?.response);
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000);
+      setLoading(false);
     }
   };
 
@@ -77,6 +76,7 @@ function Signup() {
             required
           />
         </Form.Group>
+
         {/* GROUP 2: EMAIL */}
         <Form.Group className="mb-1" controlId="email">
           <Form.Label className={styles.styledLabel}>Email</Form.Label>
@@ -91,7 +91,63 @@ function Signup() {
           />
         </Form.Group>
 
-        {/* GROUP 3: PASSWORD */}
+        {/* GROUP 3: SALUTATION, FIRST NAME, AND LAST NAME */}
+        <Row className="mb-1">
+          {/* SALUTATION */}
+          <Col sm={4}>
+            <Form.Group controlId="salutation">
+              <Form.Label className={styles.styledLabel}>Salutation</Form.Label>
+              <Form.Control
+                as="select"
+                className={styles.styledInput}
+                name="salutation"
+                value={salutation}
+                onChange={handleTextChange}
+                required
+              >
+                <option value="">Select Salutation</option>
+                <option value="Mr">Mr</option>
+                <option value="Ms">Ms</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+              </Form.Control>
+            </Form.Group>
+          </Col>
+
+          {/* FIRST NAME */}
+          <Col sm={4}>
+            <Form.Group controlId="firstName">
+              <Form.Label className={styles.styledLabel}>First Name</Form.Label>
+              <Form.Control
+                className={styles.styledInput}
+                type="text"
+                placeholder="First Name"
+                name="firstName"
+                value={firstName}
+                onChange={handleTextChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+
+          {/* LAST NAME */}
+          <Col sm={4}>
+            <Form.Group controlId="lastName">
+              <Form.Label className={styles.styledLabel}>Last Name</Form.Label>
+              <Form.Control
+                className={styles.styledInput}
+                type="text"
+                placeholder="Last Name"
+                name="lastName"
+                value={lastName}
+                onChange={handleTextChange}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        {/* GROUP 4: PASSWORD */}
         <Form.Group className="mb-1" controlId="password">
           <Form.Label className={styles.styledLabel}>Password</Form.Label>
           <Form.Control
@@ -105,9 +161,11 @@ function Signup() {
           />
         </Form.Group>
 
-        {/* GROUP 4: PASSWORD CONFIRM */}
+        {/* GROUP 5: PASSWORD CONFIRM */}
         <Form.Group className="mb-1" controlId="password-confirm">
-          <Form.Label className={styles.styledLabel}>Password</Form.Label>
+          <Form.Label className={styles.styledLabel}>
+            Confirm Password
+          </Form.Label>
           <Form.Control
             className={styles.styledInput}
             type="password"

@@ -4,6 +4,7 @@ import { Container, Form, Spinner } from "react-bootstrap";
 
 // LOCAL MODULES
 import * as styles from "./Signup.css"; // Same styles as the Signup page
+import * as stylesLogin from "./Login.css"; // Same styles as the Signup page
 import authService from "../../services/authService";
 import useAuth from "../../hooks/useAuth";
 import { Button } from "@radix-ui/themes";
@@ -43,7 +44,7 @@ function Login() {
   };
 
   return (
-    <Container className={styles.FormBox} title="Log In" authform>
+    <Container className={stylesLogin.FormBox} title="Log In" authform>
       <h2 className={styles.heading}>Log In</h2>
       <h3 className={styles.subHeading}>
         Please enter your email and password:
@@ -100,7 +101,7 @@ function Login() {
       <div className={styles.userNav}>
         <span>
           Not a member? &nbsp;
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup">Register here</Link>
         </span>
       </div>
     </Container>

@@ -29,6 +29,7 @@ export const logo = style({
   
   width: '110px',
   cursor: 'pointer',
+  margin: "auto",
   color: vars.colors.textPrimary,
 
 
@@ -37,7 +38,7 @@ export const logo = style({
 
 export const navLink = style({
   color: vars.colors.complementary,
-  fontSize: vars.fontSizes['4x'],
+  fontSize: "23px",
   textTransform: "uppercase",
   marginLeft: vars.space['4x'],
   textDecoration: 'none',

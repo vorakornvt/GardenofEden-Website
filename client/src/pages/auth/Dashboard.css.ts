@@ -4,9 +4,35 @@ import { vars } from '../../styles/themes.css';
 export const cardContainer = style({
   width: '30%',
   textAlign: 'center',
+  margin: 'auto',
   marginTop: '100px',
   backgroundColor: vars.colors.primary,
   padding: vars.space['3x'],
+  
+});
+
+export const Avatar = style({
+  textAlign: 'center',
+  marginBottom: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center', // Centers the avatar and text horizontally
+});
+// Avatar Circle styling for the user's initials
+export const AvatarCircle = style({
+  width: '50px',
+  height: '50px',
+  borderRadius: '50%',
+  backgroundColor: vars.colors.primary, 
+  color: vars.colors.textPrimary,
+  fontSize: '18px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: '10px',
+  fontWeight: 'light',
+  fontFamily: vars.fonts.brand,
+  border: `solid 1px ${vars.colors.textPrimary}`
 });
 
 export const welcomeMessage = style({
@@ -34,7 +60,7 @@ export const buttonContainer = style({
 
 export const submitButton = style({
   backgroundColor: vars.colors.primary,
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   padding: `${vars.space['2x']} ${vars.space['3x']}`,
   fontSize: vars.fontSizes['3x'],
   borderRadius: '2px',
@@ -42,12 +68,22 @@ export const submitButton = style({
   transition: 'background-color 0.3s ease, color 0.3s ease',
 
   ':hover': {
-    backgroundColor: vars.colors.complementary,
+    backgroundColor: vars.colors.band,
     color: vars.colors.primary,
   },
 
   ':focus': {
-    outline: `0.1px solid ${vars.colors.complementary}`,
+    outline: `0.1px solid ${vars.colors.band}`,
     boxShadow: `0 0 0 1px ${vars.colors.primary}`,
   },
 });
+
+
+export const BtnMain = style({
+  backgroundColor: vars.colors.primary,
+  fontFamily: vars.fonts.body,
+  color: vars.colors.band,
+  width: '170px',
+  margin: 'auto',
+  
+  })

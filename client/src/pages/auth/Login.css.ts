@@ -7,6 +7,17 @@ export const styledLabel = style({
   display: "none",
 })
 
+export const FormBox = style({
+  width: '35%',
+  alignItems: 'center',
+  textAlign: 'center',
+  paddingLeft: '40px',
+  paddingRight: '40px',
+  marginTop: '70px',
+  backgroundColor: vars.colors.primary,
+
+});
+
 export const styledInput = style({
   margin: "2rem 0",
   textAlign: "center",

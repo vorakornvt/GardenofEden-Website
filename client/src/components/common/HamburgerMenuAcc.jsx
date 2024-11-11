@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import * as styles from "./HamburgerMenuAcc.css";
 import { IoPersonOutline } from "react-icons/io5";
 import * as stylesTwo from "./Btn.css";
@@ -12,24 +12,45 @@ function HamburgerMenuAcc() {
   const { user, logout } = useAuth();
 
   const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // Get first letter of first name and last name for avatar
+  const getAvatarInitials = (firstName, lastName) => {
+    return `${firstName[0]}${lastName[0]}`;
+  };
 
   return (
     <>
-      <Button
-        variant="light"
-        onClick={() => setShow(!show)}
-        className={styles.HamBar}
-      >
-        <IoPersonOutline />
+      <Button variant="light" onClick={handleShow} className={styles.HamBar}>
+        <IoPersonOutline size={18} />
       </Button>
 
-      <Modal show={show} onHide={handleClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title className={styles.fontsize4x}>
-            ACCOUNT ACCESS
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className={styles.ModalBody}>
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        placement="end"
+        className={styles.OffCanvas}
+      >
+        <Offcanvas.Header>
+          {user ? (
+            <div className="mx-auto ">
+              <div className={styles.Avatar}>
+                {/* Display first letter of first and last name */}
+                <div className={styles.AvatarCircle}>
+                  {getAvatarInitials(user.firstName, user.lastName)}
+                </div>
+                <h5 className={styles.WelcomeText}>
+                  Welcome{" "}
+                  {`${user.salutation} ${user.firstName} ${user.lastName}`}
+                </h5>
+                <p className={styles.UserEmail}>{user.email}</p>
+              </div>
+            </div>
+          ) : (
+            <h5>ACCOUNT ACCESS</h5>
+          )}
+        </Offcanvas.Header>
+        <Offcanvas.Body className={styles.ModalBody}>
           {!user ? (
             <>
               <Button
@@ -62,6 +83,7 @@ function HamburgerMenuAcc() {
               >
                 DASHBOARD
               </Button>
+
               <Button
                 className={stylesTwo.BtnMain}
                 variant="dark"
@@ -74,8 +96,8 @@ function HamburgerMenuAcc() {
               </Button>
             </>
           )}
-        </Modal.Body>
-      </Modal>
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 }
