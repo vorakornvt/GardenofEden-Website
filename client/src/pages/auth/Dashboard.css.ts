@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../../styles/themes.css';
 
 export const cardContainer = style({
-  width: '30%',
+  width: '35%',
   textAlign: 'center',
   margin: 'auto',
   marginTop: '100px',

@@ -2,7 +2,7 @@ import "@radix-ui/themes/styles.css";
 import { Container } from "react-bootstrap";
 import * as style from "./Home.css";
 import { Link } from "react-router-dom";
-import DecorButtomWhite from "../../src/assets/images2/A2.png";
+
 import ProductList from "../../src/components/common/ProductList";
 
 const Home = () => {

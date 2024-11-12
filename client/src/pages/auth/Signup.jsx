@@ -27,7 +27,7 @@ function Signup() {
   const [loading, setLoading] = useState(false);
 
   // Destructure data state nested object properties
-  const { username, email, password, firstName, lastName, salutation } = user;
+  const { username, email, password, firstName, lastName } = user;
 
   // FORM FUNCTIONS
   const handleTextChange = (e) => {
@@ -93,27 +93,6 @@ function Signup() {
 
         {/* GROUP 3: SALUTATION, FIRST NAME, AND LAST NAME */}
         <Row className="mb-1">
-          {/* SALUTATION */}
-          <Col sm={4}>
-            <Form.Group controlId="salutation">
-              <Form.Label className={styles.styledLabel}>Salutation</Form.Label>
-              <Form.Control
-                as="select"
-                className={styles.styledInput}
-                name="salutation"
-                value={salutation}
-                onChange={handleTextChange}
-                required
-              >
-                <option value="">Select Salutation</option>
-                <option value="Mr">Mr</option>
-                <option value="Ms">Ms</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-              </Form.Control>
-            </Form.Group>
-          </Col>
-
           {/* FIRST NAME */}
           <Col sm={4}>
             <Form.Group controlId="firstName">

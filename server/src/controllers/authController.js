@@ -30,7 +30,7 @@ module.exports = {
           email: doc.data().email,
           firstName: doc.data().firstName,
           lastName: doc.data().lastName,
-          salutation: doc.data().salutation,
+
           isAdmin: doc.data().isAdmin,
         });
       });
@@ -59,7 +59,7 @@ module.exports = {
         password: await hashPassword(password),
         firstName: firstName,
         lastName: lastName,
-        salutation: salutation,
+
         isAdmin: false,
       });
 

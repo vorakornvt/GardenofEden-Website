@@ -25,7 +25,7 @@ function HamburgerMenu() {
         <RxHamburgerMenu size={18} />
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      {/* <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header className={styles.HamBarText}>
           OUR PRODUCT
         </Offcanvas.Header>
@@ -64,7 +64,7 @@ function HamburgerMenu() {
             </Link>
           </Col>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
     </>
   );
 }

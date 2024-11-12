@@ -17,7 +17,6 @@ module.exports = {
         .required(),
       firstName: Joi.string().min(1).max(50).optional(),
       lastName: Joi.string().min(1).max(50).optional(),
-      salutation: Joi.string().valid("Mr.", "Miss", "Mrs.", "Ms.").optional(),
     });
 
     // Return one of two values
@@ -47,10 +46,6 @@ module.exports = {
 
         case "lastName":
           next(ApiError.badRequest("You must provide a valid last name"));
-          break;
-
-        case "salutation":
-          next(ApiError.badRequest("You must provide a valid salutation"));
           break;
 
         default:

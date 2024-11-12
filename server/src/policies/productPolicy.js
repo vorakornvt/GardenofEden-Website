@@ -8,14 +8,14 @@ module.exports = {
   validateProduct(req, res, next) {
     console.log(req.body);
     const schema = Joi.object({
-      name: Joi.string().min(3).max(50).required(),
+      name: Joi.string().min(3).max(500).required(),
       description: Joi.string().min(3).max(2000).required(),
       category: Joi.string()
         .valid(
           "Baskets",
           "Bowls",
           "Candles",
-          "Glasses",
+          "Cushion",
           "Plates",
           "Sets",
           "Table Linen",
@@ -35,8 +35,8 @@ module.exports = {
         )
         .required(),
       price: Joi.number().required(),
-      sizes: Joi.string().min(3).max(50).required(),
-      texture: Joi.string().min(3).max(50).required(),
+      sizes: Joi.string().min(3).max(500).required(),
+      texture: Joi.string().min(3).max(500).required(),
       onSale: Joi.boolean().required(),
       isAvailable: Joi.boolean().required(),
       availableOnline: Joi.boolean().required(),

@@ -3,6 +3,7 @@ import { Card } from "@radix-ui/themes";
 import * as styles from "./Dashboard.css";
 import Button from "react-bootstrap/esm/Button";
 import * as stylesTwo from "../../components/common/Btn.css";
+import { Link } from "react-router-dom";
 const Dashboard = () => {
   // HOOK: CONTEXT FOR AUTH
   const { user, logout } = useAuth();
@@ -21,39 +22,52 @@ const Dashboard = () => {
   }
 
   return (
-    <Card className={styles.cardContainer} title="Profile" authform>
-      <div className={styles.Avatar}>
-        {/* Display first letter of first and last name */}
-        <div className={styles.AvatarCircle}>
-          {getAvatarInitials(user.firstName, user.lastName)}
+    <>
+      <Card className={styles.cardContainer} title="Profile" authform>
+        <div className={styles.Avatar}>
+          {/* Display first letter of first and last name */}
+          <div className={styles.AvatarCircle}>
+            {getAvatarInitials(user.firstName, user.lastName)}
+          </div>
         </div>
-      </div>
-      <div className={styles.welcomeMessage}>
-        <h4>Welcome {user.username}!</h4>
-      </div>
-      <p className={styles.textContent}>
-        <strong>Email: </strong>
-        {user.email}
-      </p>
-      {user.isAdmin && (
+        <div className={styles.welcomeMessage}>
+          <h4>Welcome {user.username}!</h4>
+        </div>
         <p className={styles.textContent}>
-          <strong>Secret: </strong> Hello Admin - nice to see you here
+          <strong>Email: </strong>
+          {user.email}
         </p>
-      )}
+        {user.isAdmin && (
+          <p className={styles.textContent}>
+            <strong>Admin mode: </strong> Hello, {user.firstName} - Nice to see
+            you here
+          </p>
+        )}
 
-      {/* Log Out Button */}
-      {user && (
-        <Button
-          className={stylesTwo.BtnMain}
-          variant="dark"
-          onClick={() => {
-            logout();
-          }}
-        >
-          LOGOUT
-        </Button>
-      )}
-    </Card>
+        {/* Log Out Button */}
+        {user && (
+          <div className="d-flex">
+            <Button
+              className={stylesTwo.BtnMain}
+              variant="dark"
+              onClick={() => {
+                logout();
+              }}
+            >
+              LOGOUT
+            </Button>
+            <Button
+              className={stylesTwo.BtnMain}
+              as={Link}
+              to="/store/products"
+              variant="dark"
+            >
+              PRODUCTS
+            </Button>
+          </div>
+        )}
+      </Card>
+    </>
   );
 };
 

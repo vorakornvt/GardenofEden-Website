@@ -9,7 +9,7 @@ export const styledLabel = style({
 
 export const heading = style({
   fontSize: vars.fontSizes["6x"],
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   textTransform: 'uppercase',
   marginBottom: vars.space['1x'],
   textAlign: 'center',
@@ -19,7 +19,7 @@ export const heading = style({
 
 export const subHeading = style({
   fontSize: vars.fontSizes["2x"],
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   textTransform: 'uppercase',
   marginBottom: vars.space['6x'],
   textAlign: 'center',
@@ -47,7 +47,7 @@ export const submitButton =  style({
   },
 
   ':focus': {
-    outline: `0.1px solid ${vars.colors.complementary}`,  
+    outline: `0.1px solid ${vars.colors.band}`,  
     boxShadow: `0 0 0 1px ${vars.colors.primary}`,  
   },
 });
@@ -58,7 +58,7 @@ export const FormBox = style({
   textAlign: 'center',
   paddingLeft: '40px',
   paddingRight: '40px',
-  marginTop: '70px',
+  marginTop: '20px',
   backgroundColor: vars.colors.primary,
 
 });
@@ -73,7 +73,7 @@ export const styledInput = style({
   outline: "none",
   border: "1px solid",
   color: vars.colors.band,
-  background: vars.colors.complementary,
+  background: vars.colors.primary,
   fontFamily: vars.fonts.body,
   transition: "all 0.2s",
 
@@ -89,18 +89,18 @@ export const userNav = style({
   paddingTop: "1rem",
   fontSize: "0.9em",
   fontFamily: vars.fonts.body,
-  color: vars.colors.complementary,
+  color: vars.colors.band,
   marginBottom: vars.space["2x"]
 })
 
 globalStyle(`${userNav} a`, {
  
-  color: vars.colors.complementary,
+  color: vars.colors.band,
 
 });
 
 globalStyle(`${userNav} a:hover`, {
-  color: vars.colors.brand,
+  color: vars.colors.band,
   textDecoration: "underline"
 
 });

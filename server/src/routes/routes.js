@@ -15,8 +15,8 @@ module.exports = () => {
     res.send("Welcome to the Garden of Eden API");
   });
 
-  // Example route for filtered products
-  router.get("/products/filtered", productController.getFilteredProducts);
+  //  route for filtered products
+  router.get("store/products/filtered", productController.getFilteredProducts);
 
   // SUBROUTES
   // auth routes: http://localhost:5000/api/auth

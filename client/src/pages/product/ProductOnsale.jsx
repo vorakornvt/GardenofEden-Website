@@ -9,7 +9,7 @@ import TuLoader from "../../components/common/Loader";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function ProductsPage() {
+function ProductsOnsale() {
   // HOOK: CONTEXT FOR AUTH
   const { user } = useAuth();
 
@@ -38,7 +38,7 @@ function ProductsPage() {
   async function fetchProducts() {
     try {
       // TU API Request
-      const response = await productService.getAll();
+      const response = await productService.getOnsale();
 
       // Access Object Properties to Find Data Array & Save to Variable
       const data = await response.data;
@@ -72,9 +72,9 @@ function ProductsPage() {
 
   return (
     <Container className="text-center mt-4">
-      <h1 className={fonts.FontBrand}>All Product</h1>
+      <h1 className={fonts.FontBrand}>Online Offer Product</h1>
       <p className={fonts.FontBody}>
-        The elegance of product according to Garden of Eden.
+        Special Online offer just for you here by Garden of Eden.
       </p>
 
       {/* ADMIN SECTION: AUTHORISATION REQUIRED */}
@@ -84,12 +84,14 @@ function ProductsPage() {
             variant="dark"
             className={buttons.BtnMain}
             as={Link}
-            to="/store/product/add"
+            to="/store/product/"
           >
             Add Product
           </Button>
         </div>
       )}
+
+      {/* here i want fitter button that user can fitter there product down ther by its color category onlineAvailble  */}
 
       {/* Products Menu */}
       {<ProductsList products={data} />}
@@ -97,4 +99,4 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+export default ProductsOnsale;

@@ -13,16 +13,12 @@ export const HamBar = style({
   }
 });
 
-// ModalBody with Flex layout and padding
 export const ModalBody = style({
   display: 'flex',
-  flexDirection: 'row',
   backgroundColor: 'white',
-  alignItems: 'center',
   borderRadius: '20px',
   gap: '1rem',
   padding: '2rem',
- 
 });
 
 // Style for Hamburger Button Text (like labels or headings)

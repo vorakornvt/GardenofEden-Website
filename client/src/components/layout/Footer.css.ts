@@ -6,6 +6,7 @@ export const footerStyle = style({
   justifyContent: 'center',
   height: '120px',
   alignItems: 'center',
+  marginTop: "15px",
   padding: '20px 40px',
   backgroundColor: vars.colors.primary, 
   borderTop: `0.5px solid ${vars.colors.textPrimary}`, 

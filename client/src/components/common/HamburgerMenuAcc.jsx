@@ -40,14 +40,21 @@ function HamburgerMenuAcc() {
                   {getAvatarInitials(user.firstName, user.lastName)}
                 </div>
                 <h5 className={styles.WelcomeText}>
-                  Welcome{" "}
-                  {`${user.salutation} ${user.firstName} ${user.lastName}`}
+                  Welcome {` ${user.firstName} ${user.lastName}`}
                 </h5>
                 <p className={styles.UserEmail}>{user.email}</p>
               </div>
             </div>
           ) : (
-            <h5>ACCOUNT ACCESS</h5>
+            <>
+              <div className="row d-flex  mx-auto">
+                <h5 className=" row">ACCOUNT ACCESS</h5>
+
+                <h5 className="fs-6 row">
+                  Please login to access for full experience
+                </h5>
+              </div>
+            </>
           )}
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.ModalBody}>
@@ -74,26 +81,41 @@ function HamburgerMenuAcc() {
             </>
           ) : (
             <>
-              <Button
-                className={stylesTwo.BtnMain}
-                as={Link}
-                to="/dashboard"
-                variant="dark"
-                onClick={handleClose}
-              >
-                DASHBOARD
-              </Button>
+              {" "}
+              <div className="text-center row">
+                <div className="d-flex">
+                  {" "}
+                  <Button
+                    className={stylesTwo.BtnMain}
+                    as={Link}
+                    to="/dashboard"
+                    variant="dark"
+                    onClick={handleClose}
+                  >
+                    DASHBOARD
+                  </Button>
+                  <Button
+                    className={stylesTwo.BtnMain}
+                    as={Link}
+                    to="/store/products"
+                    variant="dark"
+                    onClick={handleClose}
+                  >
+                    PRODUCT
+                  </Button>
+                </div>
 
-              <Button
-                className={stylesTwo.BtnMain}
-                variant="dark"
-                onClick={() => {
-                  logout();
-                  handleClose();
-                }}
-              >
-                LOGOUT
-              </Button>
+                <Button
+                  className={stylesTwo.BtnMain}
+                  variant="dark"
+                  onClick={() => {
+                    logout();
+                    handleClose();
+                  }}
+                >
+                  LOGOUT
+                </Button>
+              </div>
             </>
           )}
         </Offcanvas.Body>
