@@ -30,7 +30,6 @@ module.exports = {
           email: doc.data().email,
           firstName: doc.data().firstName,
           lastName: doc.data().lastName,
-
           isAdmin: doc.data().isAdmin,
         });
       });
