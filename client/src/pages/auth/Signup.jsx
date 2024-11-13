@@ -22,7 +22,6 @@ function Signup() {
     password: "",
     firstName: "",
     lastName: "",
-    salutation: "",
   });
   const [loading, setLoading] = useState(false);
 

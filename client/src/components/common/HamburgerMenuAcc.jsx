@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import Modal from "react-bootstrap/Modal";
 import * as styles from "./HamburgerMenuAcc.css";
 import { IoPersonOutline } from "react-icons/io5";
 import * as stylesTwo from "./Btn.css";
@@ -25,39 +25,44 @@ function HamburgerMenuAcc() {
         <IoPersonOutline size={18} />
       </Button>
 
-      <Offcanvas
+      <Modal
         show={show}
         onHide={handleClose}
-        placement="end"
-        className={styles.OffCanvas}
+        centered
+        size="l"
+        className={styles.Modal}
       >
-        <Offcanvas.Header>
+        <Modal.Header>
           {user ? (
-            <div className="mx-auto ">
+            <div className="mx-auto text-center ">
               <div className={styles.Avatar}>
-                {/* Display first letter of first and last name */}
                 <div className={styles.AvatarCircle}>
                   {getAvatarInitials(user.firstName, user.lastName)}
                 </div>
                 <h5 className={styles.WelcomeText}>
-                  Welcome {` ${user.firstName} ${user.lastName}`}
+                  Welcome {` ${user.firstName}, ${user.lastName}`}
                 </h5>
                 <p className={styles.UserEmail}>{user.email}</p>
               </div>
+              <Button
+                variant="secondary"
+                className=""
+                onClick={() => {
+                  logout();
+                  handleClose();
+                }}
+              >
+                LOGOUT
+              </Button>
             </div>
           ) : (
-            <>
-              <div className="row d-flex  mx-auto">
-                <h5 className=" row">ACCOUNT ACCESS</h5>
-
-                <h5 className="fs-6 row">
-                  Please login to access for full experience
-                </h5>
-              </div>
-            </>
+            <div className="text-center mx-auto">
+              <h5>ACCOUNT ACCESS</h5>
+              <p>Please login for a full experience</p>
+            </div>
           )}
-        </Offcanvas.Header>
-        <Offcanvas.Body className={styles.ModalBody}>
+        </Modal.Header>
+        <Modal.Body className={styles.ModalBody}>
           {!user ? (
             <>
               <Button
@@ -80,46 +85,30 @@ function HamburgerMenuAcc() {
               </Button>
             </>
           ) : (
-            <>
-              {" "}
-              <div className="text-center row">
-                <div className="d-flex">
-                  {" "}
-                  <Button
-                    className={stylesTwo.BtnMain}
-                    as={Link}
-                    to="/dashboard"
-                    variant="dark"
-                    onClick={handleClose}
-                  >
-                    DASHBOARD
-                  </Button>
-                  <Button
-                    className={stylesTwo.BtnMain}
-                    as={Link}
-                    to="/store/products"
-                    variant="dark"
-                    onClick={handleClose}
-                  >
-                    PRODUCT
-                  </Button>
-                </div>
-
-                <Button
-                  className={stylesTwo.BtnMain}
-                  variant="dark"
-                  onClick={() => {
-                    logout();
-                    handleClose();
-                  }}
-                >
-                  LOGOUT
-                </Button>
-              </div>
-            </>
+            <div className="text-center col">
+              <Button
+                className={stylesTwo.BtnMain}
+                as={Link}
+                to="/dashboard"
+                variant="dark"
+                onClick={handleClose}
+              >
+                DASHBOARD
+              </Button>
+              <div></div>
+              <Button
+                className={stylesTwo.BtnMain}
+                as={Link}
+                to="/store/products"
+                variant="dark"
+                onClick={handleClose}
+              >
+                PRODUCT
+              </Button>
+            </div>
           )}
-        </Offcanvas.Body>
-      </Offcanvas>
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

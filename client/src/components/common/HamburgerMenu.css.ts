@@ -6,7 +6,7 @@ export const HamBar = style({
   border: 'none',
   color: 'black',
   textTransform: "uppercase",
-  marginRight: vars.space['4x'],
+
   textDecoration: 'none',
 
   ":hover": {
