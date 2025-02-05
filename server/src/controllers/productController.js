@@ -160,7 +160,7 @@ module.exports = {
   // [1B] GET onSale Products
   async getOnSaleProducts(req, res, next) {
     try {
-      // Store the collection reference in variable & call GET method (with comp index)
+    
       const productRef = db.collection("products");
       const snapshot = await productRef
         .where("onSale", "==", "true")

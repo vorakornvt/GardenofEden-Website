@@ -17,7 +17,7 @@ const Header = () => {
         {/* Left Section: Conditional Link */}
 
         <Col xs="0">
-          <Link className="text-dark" to={user ? "/store/products" : "/login"}>
+          <Link className="text-dark" to="/store/products">
             {" "}
             <RxHamburgerMenu size={18} as={Link} />
           </Link>
