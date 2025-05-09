@@ -12,7 +12,7 @@ const config = require("./config/config");
 const ApiError = require("./utilities/ApiError");
 const apiErrorHandler = require("./middleware/apiErrorHandler");
 const routes = require("./routes/routes");
-const connectDB = require("./config/db");
+const { dbPing } = require("./config/db");
 const corsOptions = require("./config/corsOptions");
 const debugStartup = require("debug")("app:startup");
 
@@ -48,8 +48,8 @@ app.use((req, res, next) => {
 app.use(apiErrorHandler);
 
 // Ping DB & Set Port
-connectDB().then(() => {
-  app.listen(config.port, () => {
-    console.log(`🚀 Server running on port: ${config.port}`);
-  });
+dbPing.then(() => {
+  app.listen(config.port, () =>
+    console.log(`Server is running on port: ${config.port}`)
+  );
 });
